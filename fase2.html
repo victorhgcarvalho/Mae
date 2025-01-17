@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 2 - Cofre Secreto</title>
+    <link rel="stylesheet" href="css/fase2.css">
+</head>
+<body>
+    <div class="hearts-container"></div>
+    <div class="container">
+        
+        <div class="safe">
+            <div class="safe-door">
+                <div class="lock">
+                    <div class="digit" data-index="0">0</div>
+                    <div class="digit" data-index="1">0</div>
+                    <div class="digit" data-index="2">0</div>
+                    <div class="digit" data-index="3">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="message-container hidden">
+            <p class="message">Você é o meu bem mais precioso que eu tenho mãe, e vou te guardar no lugar mais seguro possível, com todo amor e carinho!!!</p>
+        </div>
+
+        <button class="next-button hidden" onclick="nextPhase()">Próxima Fase</button>
+    </div>
+
+    <audio id="correctSound" src="assets/click.mp3"></audio>
+    <audio id="safeSound" src="assets/cofre.mp3"></audio>
+
+    <script src="js/fase2.js"></script>
+</body>
+</html>

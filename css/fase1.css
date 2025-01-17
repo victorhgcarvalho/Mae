@@ -1,0 +1,222 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ff9ce6, #ffcce6, #ff66b3, #ffb3d9);
+  }
+
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+  
+  .envelope {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .back {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    background-color: purple;
+  }
+  
+  .front {
+    position: absolute;
+    border-right: 130px solid #815ac0;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 120px;
+    z-index: 3;
+  }
+  .front:before {
+    content: '';
+    position: absolute;
+    border-left: 130px solid #815ac0;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    height: 0;
+    width: 0;
+    top: -100px;
+    left: -120px;
+  }
+  .front:after {
+    content: '';
+    position: absolute;
+    border-bottom: 105px solid #7251b5;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    height: 0;
+    width: 0;
+    top: -5px;
+    left: -120px;
+  }
+  
+  .top {
+      position: absolute;
+      border-top: 105px solid #9163cb;
+      border-left: 125px solid transparent;
+      border-right: 125px solid transparent;
+      height: 0;
+      width: 0;
+      top: 0;
+      transform-origin: top;
+      transition: 0.4s;
+  }
+  .envelope:hover .top{
+      transform: rotateX(160deg);
+  }
+  .letter{
+      position: absolute;
+      background-color: white;
+      width: 230px;
+      height: 180px;
+      top: 10px;
+      left: 10px;
+      transition: 0.2;
+  }
+  .envelope:hover .letter{
+      transform: translateY(-150px);
+      z-index: 2;
+  }
+  .text1{
+      color: white;
+      font-family: sans-serif ;
+      top: -50px;
+  }
+  .text{
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: -10px;
+      font-weight: bold;
+      color: black;
+      position: relative;
+      top: -20px;
+      left: 15px;
+  }
+  
+  /*---heart---*/
+  .Heart{
+      background-color: red;
+      height: 70px;
+      width: 70px;
+      position: relative;
+      top: 20px;
+      left: 20px;
+      transform: rotate(-45deg);
+      box-shadow: -5px 10px 90px red;
+      animation: untoldcoding 0.6 linear infinite;   
+  }
+  
+  @keyframes untoldcoding{
+      0%{
+          transform: rotate(1000deg) scale(15);
+      }
+      70%{
+          transform: rotate(-45deg) scale(1);
+      }
+      100%{
+          transform: rotate(-45deg) scale(1.08);
+      }
+  }
+  
+  .Heart:before{
+      content: '';
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      background-color: red;
+      top: -40px;
+      border-radius: 50px;
+  }
+  .Heart:after{
+      content: '';
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      background-color: red;
+      right: -40px;
+      border-radius: 50px;
+  }
+  
+  .start-button {
+    background-color: #ff66b3;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px #d94d99;
+    transition: transform 0.3s;
+  }
+  
+  .start-button:hover {
+    transform: scale(1.1);
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+
+  .hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+    animation: fall 5s linear forwards;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+  
+  /* Animação dos corações caindo */
+  @keyframes fall {
+    0% {
+      transform: translateY(-20vh) rotate(-45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+  
